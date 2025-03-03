@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Railway Experience</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script
+      src="https://use.fontawesome.com/releases/v6.3.0/js/all.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Google fonts-->
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+    <style>
+      body {
+        background: url("assets/img/portfolio/background2.jpg") no-repeat center
+          center fixed;
+        background-size: cover;
+      }
+    </style>
+  </head>
+  <body id="page-top">
+    <!-- Navigation-->
+    <nav
+      class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top"
+      id="mainNav"
+    >
+      <div class="container">
+        <a class="navbar-brand" href="/">Railway Experience</a>
+        <button
+          class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          Menu
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item mx-0 mx-lg-1">
+              <a
+                class="nav-link py-3 px-0 px-lg-3 rounded"
+                href="complaint.html"
+                >File a Complaint</a
+              >
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded" href=""
+                >PNR Status</a
+              >
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded" href="feedback.html"
+                >Feedback</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <br />
+    <br />
+    <section class="page-section portfolio" id="portfolio">
+      <div class="container">
+        <!-- Portfolio Section Heading-->
+        <h2
+          class="page-section-heading text-center text-uppercase text-light mb-0"
+        >
+          File a Complaint
+        </h2>
+        <!-- Icon Divider-->
+        <div class="divider-custom">
+          <div class="divider-custom-line2"></div>
+          <div class="divider-custom-icon">
+            <i class="fas fa-train text-light"></i>
+          </div>
+          <div class="divider-custom-line2"></div>
+        </div>
+        <!-- Complaint Form-->
+        <form id="complaintForm" name="complaintForm" novalidate="novalidate">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <input
+                  class="form-control"
+                  id="name"
+                  type="text"
+                  placeholder="Your Name *"
+                  required="required"
+                  data-validation-required-message="Please enter your name."
+                />
+                <p class="help-block text-danger"></p>
+              </div>
+              <div class="form-group">
+                <input
+                  class="form-control"
+                  id="pnr"
+                  type="text"
+                  placeholder="PNR Number"
+                  required="required"
+                  data-validation-required-message="Please enter your PNR number."
+                />
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <input
+                  class="form-control"
+                  id="email"
+                  type="email"
+                  placeholder="Your Email *"
+                  required="required"
+                  data-validation-required-message="Please enter your email address."
+                />
+                <p class="help-block text-danger"></p>
+              </div>
+              <div class="form-group">
+                <input
+                  class="form-control"
+                  id="contact"
+                  type="text"
+                  placeholder="Contact Number *"
+                  required="required"
+                  data-validation-required-message="Please enter your contact number."
+                />
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <select
+              class="form-control"
+              id="subject"
+              required="required"
+              data-validation-required-message="Please select a subject."
+            >
+              <option value="" disabled selected>Select Subject *</option>
+              <option value="Train Delay">Train Delay</option>
+              <option value="Ticket Booking Issue">Ticket Booking Issue</option>
+              <option value="Service Quality">Service Quality</option>
+              <option value="Other">Other</option>
+            </select>
+            <p class="help-block text-danger"></p>
+          </div>
+          <div class="form-group">
+            <textarea
+              class="form-control"
+              id="message"
+              rows="5"
+              placeholder="Your Complaint *"
+              required="required"
+              data-validation-required-message="Please enter your complaint."
+            ></textarea>
+            <p class="help-block text-danger"></p>
+          </div>
+
+          <div class="form-group">
+            <input
+              class="form-control"
+              id="image"
+              type="file"
+              placeholder="Upload Image"
+            />
+            <p class="help-block text-danger"></p>
+          </div>
+          <div class="form-group">
+            <button
+              class="btn btn-primary btn-l"
+              id="sendMessageButton"
+              type="submit"
+            >
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+    <!-- Contact Section-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+    <!-- SB Forms JS-->
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+  </body>
+</html>

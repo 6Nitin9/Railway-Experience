@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta
+      name="description"
+      content="Check your train's PNR status quickly and easily"
+    />
+    <meta name="author" content="Your Name" />
+    <title>Railway Experience</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <script
+      src="https://use.fontawesome.com/releases/v6.3.0/js/all.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link href="css/styles.css" rel="stylesheet" />
+    <style>
+      body {
+        background: url("assets/img/portfolio/background2.jpg") no-repeat center
+          center fixed;
+        background-size: cover;
+      }
+      table {
+        background-color: black;
+        color: white;
+        border-collapse: collapse;
+        width: 100%;
+      }
+      table,
+      th,
+      td {
+        border: 1px solid white;
+      }
+      th,
+      td {
+        padding: 10px;
+        text-align: left;
+      }
+    </style>
+  </head>
+  <body id="page-top">
+    <nav
+      class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top"
+      id="mainNav"
+    >
+      <div class="container">
+        <a class="navbar-brand" href="/">Railway Experience</a>
+        <button
+          class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          Menu <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item mx-0 mx-lg-1">
+              <a
+                class="nav-link py-3 px-0 px-lg-3 rounded"
+                href="complaint.html"
+                >File a Complaint</a
+              >
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded" href="pnr.html"
+                >PNR Status</a
+              >
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded" href="feedback.html"
+                >Feedback</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <br /><br />
+    <section class="page-section" id="pnr-status">
+      <div class="container">
+        <h2
+          class="page-section-heading text-center text-uppercase text-light mb-0"
+        >
+          Check Your PNR Status
+        </h2>
+        <div class="divider-custom">
+          <div class="divider-custom-line2"></div>
+          <div class="divider-custom-icon text-light">
+            <i class="fas fa-train text-secondary"></i>
+          </div>
+          <div class="divider-custom-line2"></div>
+        </div>
+        <form
+          id="pnrStatusForm"
+          name="pnrStatusForm"
+          novalidate="novalidate"
+          onsubmit="return checkPnrStatus(event)"
+        >
+          <div class="form-group">
+            <input
+              class="form-control"
+              id="pnrNumber"
+              type="text"
+              placeholder="Enter PNR Number *"
+              required="required"
+              data-validation-required-message="Please enter your PNR number."
+            />
+            <p class="help-block text-danger"></p>
+          </div>
+          <br />
+          <div class="form-group">
+            <button
+              class="btn btn-primary btn-l"
+              id="checkPnrButton"
+              type="submit"
+            >
+              Check Status
+            </button>
+          </div>
+        </form>
+        <br />
+        <div id="pnrStatusResult" class="text-center text-light"></div>
+      </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <script>
+      function checkPnrStatus(event) {
+        event.preventDefault();
+        const pnrNumber = document.getElementById("pnrNumber").value;
+        const pnrStatusResult = document.getElementById("pnrStatusResult");
+        const sampleData = {
+          pnr: "1234567890",
+          train: "Shatabdi Express",
+          date: "2025-04-01",
+          from: "New Delhi",
+          to: "Amritsar",
+          status: "Confirmed",
+          seat: "A1-21",
+        };
+        if (pnrNumber === sampleData.pnr) {
+          pnrStatusResult.innerHTML = `
+                    <h4>PNR Status:</h4>
+                    <table>
+                        <tr><th>Train</th><td>${sampleData.train}</td></tr>
+                        <tr><th>Date</th><td>${sampleData.date}</td></tr>
+                        <tr><th>From</th><td>${sampleData.from}</td></tr>
+                        <tr><th>To</th><td>${sampleData.to}</td></tr>
+                        <tr><th>Status</th><td>${sampleData.status}</td></tr>
+                        <tr><th>Seat</th><td>${sampleData.seat}</td></tr>
+                    </table>
+                `;
+        } else {
+          pnrStatusResult.innerHTML =
+            "<p>PNR not found. Please check the number and try again.</p>";
+        }
+      }
+    </script>
+  </body>
+</html>
